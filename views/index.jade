@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+   form(name="/", method="post")
+        div.input
+            span.label year       
+	    ul
+	  		each val in [1, 2, 3, 4, 5]
+    		li= val
+         div.input
+            span.label year
+            input(type="text", name="myname")
+        div.actions
+            input(type="submit", value="add")

@@ -1,0 +1,20 @@
+h1= title
+p Welcome to #{title}
+
+form(name="/", method="post")
+  div.input
+  span.label year
+  ul
+    each year in years
+      li= year
+  div.input
+    span.label Annual Income
+    input(type="text", name="annual_income")
+  div.input
+    span.label Annual Rate of Income Increase
+    input(type="text", name="annual_increase")
+  div.input
+    span.label Annual Rate of Inflation
+    input(type="text", name="annual_rate")
+  div.actions
+    input(type="submit", value="add")
