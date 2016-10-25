@@ -1,20 +1,26 @@
-h1= title
-p Welcome to #{title}
+html
+  head
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+div.jumbotron
+  h1.display-3= title
+  p.lead Welcome to #{title} to calculate taxes after retirement!
 
-form(name="/", method="post")
-  div.input
-  span.label year
-  ul
-    each year in years
-      li= year
-  div.input
-    span.label Annual Income
-    input(type="text", name="annual_income")
-  div.input
-    span.label Annual Rate of Income Increase
-    input(type="text", name="annual_increase")
-  div.input
-    span.label Annual Rate of Inflation
-    input(type="text", name="annual_rate")
-  div.actions
-    input(type="submit", value="add")
+div.container
+  div.content
+
+div.row
+form.form-inline(name="/", method="post")
+  div.form-group  
+    div.input.form-control.col-3
+      label Annual Income
+      input(type="text", name="annual_income")
+    div.input.form-control.col-3
+      label Annual Rate of Income Increase
+      input(type="text", name="annual_increase")
+    div.input.form-control.col-3
+      label Annual Rate of Inflation
+      input(type="text", name="annual_rate")
+    div.input.form-control.col-3
+      input.btn.btn-primary(type="submit", value="calculate")      
+ 
+  div.footer
