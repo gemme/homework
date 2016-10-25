@@ -9,18 +9,59 @@ div.container
   div.content
 
 div.row
-form.form-inline(name="/", method="post")
-  div.form-group  
+form(name="/", method="post")
+  div.form-group
     div.input.form-control.col-3
-      label Annual Income
-      input(type="text", name="annual_income")
+      label Current Age
+      input(type="text", name="current_age")
     div.input.form-control.col-3
-      label Annual Rate of Income Increase
-      input(type="text", name="annual_increase")
+      label Age at Retirement
+      input(type="text", name="retirement_age")        
     div.input.form-control.col-3
-      label Annual Rate of Inflation
-      input(type="text", name="annual_rate")
+      label Present Value
+      input(type="text", name="present_value")
     div.input.form-control.col-3
-      input.btn.btn-primary(type="submit", value="calculate")      
- 
-  div.footer
+      label Expected Annual Return
+      input(type="text", name="annual_return")
+    div.input.form-control.col-3
+      label Annual Payment
+      input(type="text", name="annual_payment")
+    div.input.form-control.col-3
+      label # of Annual Payments
+      input(type="text", name="number_annual_payments")      
+    div.input.form-control.col-3
+      input.btn.btn-primary(type="submit", value="calculate")
+div.container
+    div.content
+      table.table.table-striped
+        thead
+          tr
+            th Year
+            th Age
+            th Rate
+            th Invested(Payments)
+            th Cumulative Payments
+            th Interest
+            th Cumulative Interest
+            th Balance
+        tbody
+          - var n = 1;
+          while n <= values[0].length
+            tr
+              // years
+              td=values[0][n]
+              // age
+              td=values[1][n]
+              // Rate
+              td=values[2][n]
+              // invested payments
+              td=values[3][n]
+              // cumulative payments
+              td=values[4][n]
+              // interest
+              td=values[5][n]
+              // cumulative Interest            
+              td=values[6][n]
+              // balance
+              td=values[7][n++]
+div.footer
